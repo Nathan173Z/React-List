@@ -1,0 +1,40 @@
+.uiButton{
+    background-color: unset;
+    border-radius: 4px;
+    text-decoration: none;
+    padding: 8px 10px;
+    white-space: nowrap;
+    
+}
+
+.uiButton--bordered-primary{
+    color:#3498db;
+    border: 1px solid #3498db;
+
+}
+
+.uiButton--contained-success{
+    color:#fff;
+    background-color: #2ecc71;
+    border: 1px solid #2ecc71;
+}
+
+.uiButton--bordered-warning{
+    color:#e5ae08;
+    border: 1px solid #e5ae08;
+}
+
+.uiButton--contained-warning{
+    color:#fff;
+    background-color: #e5ae08;
+    border: 1px solid #e5ae08;
+}
+
+.uiButton--contained-primary{
+    color:#fff;
+    background-color: #3498db;
+    border: 1px solid #3498db;
+}
+
+
+
