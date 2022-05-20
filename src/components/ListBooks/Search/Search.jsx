@@ -1,8 +1,8 @@
 import React, { useEffect, useState} from 'react';
 import searchCss from './search.module.css'
 import axios from 'axios';
-import Books from '../../components/Books/Books';
-import UIButton from '../UI/Button/Button';
+import Books from '../Books/Books';
+import UIButton from '../../UI/Button/Button';
 import { Link } from 'react-router-dom';
 
 function SearchBooks() {
@@ -16,7 +16,7 @@ function SearchBooks() {
         params.title_like = search;
       }
 
-      axios.get('http://localhost:3000/books', {params})
+      axios.get('http://localhost:5000/books', {params})
       .then(
         (response) => {
         console.log(response.data);

@@ -1,5 +1,5 @@
 import React from 'react';
-import PagesSearchBook from '../../components/Search/Search';
+import PagesSearchBook from '../../components/ListBooks/Search/Search';
 
 
 function PageSearchBooks() {
