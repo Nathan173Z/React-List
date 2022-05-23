@@ -7,9 +7,9 @@ import UIButton from '../../UI/Button/Button'
 
 const initialValue = {
   title: '',
-  url: '',
-  imageUrl: '',
+  image: '',
   price: 0,
+  url: '',
 }
 
 
@@ -24,7 +24,7 @@ const PromotionForm = ( {id}) =>{
    
     useEffect(() => {
         if (id) {
-          axios.get(`https://apifake-jsonserver.herokuapp.com/promotions/${id}`)
+          axios.get(`http://localhost:3000/books/${id}`)
             .then((response) => {
               setValues(response.data);
               setAcao('Editar')
@@ -37,9 +37,9 @@ const PromotionForm = ( {id}) =>{
         ev.preventDefault(); 
     
         const method = id ? 'put' : 'post';
-        const url = id
-          ? `https://apifake-jsonserver.herokuapp.com/promotions/${id}`
-          : 'https://apifake-jsonserver.herokuapp.com/promotions'
+        const url = id 
+          ? `http://localhost:3000/books/${id}`
+          : 'http://localhost:3000/books'
     
         axios[method](url, values)
           .then((response) => {
@@ -50,7 +50,7 @@ const PromotionForm = ( {id}) =>{
         
     }
     
-        
+ 
     
       
       function onChange(ev) {
@@ -66,14 +66,14 @@ const PromotionForm = ( {id}) =>{
         return(
           <div className={formCss.promotionFormGroupBtn}>
           <UIButton type="submit" component="button" theme="contained-primary">Salvar</UIButton>
-          <UIButton to="/" component={Link} theme="contained-warning" >Candelar</UIButton>
+          <UIButton to="/" component={Link} theme="contained-warning" >Cancelar</UIButton>
           </div>
         )
       } else {
         return(
           <div className={formCss.promotionFormGroupBtn}>
           <UIButton type="submit" component="button" >Salvar</UIButton>
-          <UIButton to="/" component={Link} theme="bordered-warning" >Candelar</UIButton>
+          <UIButton to="/" component={Link} theme="bordered-warning" >Cancelar</UIButton>
           </div>
         )
       }
@@ -90,7 +90,7 @@ const PromotionForm = ( {id}) =>{
             ) : (
             <div>
               <div>
-                <img className={formCss.promotionImage}  src={values.imageUrl} alt={values.title}  />
+                <img className={formCss.promotionImage}  src={values.image} alt={values.title}  />
               </div>
             <form onSubmit={onSubmit}> {}
               
@@ -103,8 +103,8 @@ const PromotionForm = ( {id}) =>{
                 <input id="url" name="url" type="text" onChange={onChange} value={values.url}/> {}
               </div>
               <div className={formCss.promotionFormGroup}>
-                <label htmlFor="imageUrl">Imagem (URL)</label>
-                <input id="imageUrl" name="imageUrl" type="text" onChange={onChange}  value={values.imageUrl}/> {}
+                <label htmlFor="image">Imagem (URL)</label>
+                <input id="image" name="image" type="text" onChange={onChange}  value={values.image}/> {}
               </div>
               <div className={formCss.promotionFormGroup}>
                 <label htmlFor="price">Preço</label>

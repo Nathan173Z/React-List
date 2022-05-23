@@ -16,7 +16,7 @@ function SearchBooks() {
         params.title_like = search;
       }
 
-      axios.get('http://localhost:5000/books', {params})
+      axios.get('http://localhost:3000/books/', {params})
       .then(
         (response) => {
         console.log(response.data);
@@ -34,7 +34,7 @@ function SearchBooks() {
         <>
          <header className={searchCss.promotionSearchHeader}>
               <h1>Pesquisa de Livros</h1>
-              <UIButton to="/create" component={Link} theme="contained-success">Novo Livro</UIButton>
+              <UIButton to="/create" component={Link} theme="contained-success">Novo Livro</UIButton>          
           </header>
           <input type="search"
                   className={searchCss.promotionSearchInput}

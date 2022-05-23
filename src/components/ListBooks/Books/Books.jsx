@@ -1,6 +1,8 @@
 import React from 'react';
 import {Button} from 'react-bootstrap';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import UIButton from '../../UI/Button/Button';
 
 const ItemContainer = styled.div`
 
@@ -53,7 +55,9 @@ const Books = ( {books} ) =>{
                 <TitlePane>{books.title}</TitlePane>
                 <PricePane>R$ {books.price}</PricePane>
                 <Button variant="primary">Comprar</Button>
-    
+                <UIButton 
+                component={Link}  
+                to={`/edit/${books.id}`}>Editar</UIButton>
             </ItemContainer>
         </ItemLink>
         
