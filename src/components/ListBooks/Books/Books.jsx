@@ -18,15 +18,17 @@ padding: 10px;
 display: inline-block;
 
 
+
 `
 const TitlePane = styled.div`
     font-weight: bold;
     margin-bottom: 5px;
-
+    
 
 `
 const PricePane = styled.div`
     margin-bottom: 5px;
+    
 `
 const Thumbnail = styled.img`
     width: auto;
@@ -35,12 +37,14 @@ const Thumbnail = styled.img`
     vertical-align: middle;
     float: left;
     margin-right: 10px;
+    
 
 `
 const ItemLink = styled.a`
     text-decoration: none;
     `
 
+    
 
 
 const Books = ( {books} ) =>{

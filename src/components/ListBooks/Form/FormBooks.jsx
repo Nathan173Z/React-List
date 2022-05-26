@@ -24,7 +24,7 @@ const PromotionForm = ( {id}) =>{
    
     useEffect(() => {
         if (id) {
-          axios.get(`http://localhost:3000/books/${id}`)
+          axios.get(`https://api-list-books.azurewebsites.net/books/${id}`)
             .then((response) => {
               setValues(response.data);
               setAcao('Editar')
@@ -38,8 +38,8 @@ const PromotionForm = ( {id}) =>{
     
         const method = id ? 'put' : 'post';
         const url = id 
-          ? `http://localhost:3000/books/${id}`
-          : 'http://localhost:3000/books'
+          ? `https://api-list-books.azurewebsites.net/books/${id}`
+          : 'https://api-list-books.azurewebsites.net/books'
     
         axios[method](url, values)
           .then((response) => {

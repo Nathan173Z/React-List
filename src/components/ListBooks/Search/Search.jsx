@@ -16,7 +16,7 @@ function SearchBooks() {
         params.title_like = search;
       }
 
-      axios.get('http://localhost:3000/books/', {params})
+      axios.get('https://api-list-books.azurewebsites.net/books/', {params})
       .then(
         (response) => {
         console.log(response.data);
