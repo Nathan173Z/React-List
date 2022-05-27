@@ -4,10 +4,12 @@ import axios from 'axios';
 import Books from '../Books/Books';
 import UIButton from '../../UI/Button/Button';
 import { Link } from 'react-router-dom';
+import api from '../../../service/api';
 
 function SearchBooks() {
     const [books, setBooks] = useState([]);
     const [search, setSearch] = useState('');
+    const [onDelete, setOnDelete] = useState(null);
 
     useEffect( ()=>{
 
@@ -24,9 +26,19 @@ function SearchBooks() {
         }
       );
 
-    }, [search] );
+    }, [search, onDelete] );
     
-    
+    const handleDelete = async (id) => {
+
+      const method = 'delete';
+      const url = `https://api-list-books.azurewebsites.net/books/${id}`;
+      await api[method](url)
+        .then((response) => {
+          setOnDelete(id);
+          return (<>Deletando....</>)
+        });
+  
+    }
     
     
     
@@ -45,7 +57,8 @@ function SearchBooks() {
           />
               
             {books.map( (books) => (
-            <Books books={books} key={books.title} /> 
+            <Books books={books} key={books.id}
+            onClickDelete={ () => handleDelete(books.id)} /> 
             )
             )
           }

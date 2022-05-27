@@ -1,0 +1,10 @@
+.bookDelete{
+
+    border: unset;
+    background-color:unset;
+    /* position:relative; */
+    top: 10px;
+    left: auto;
+    position: absolute;
+
+}
