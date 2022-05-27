@@ -13,7 +13,7 @@ const ItemContainer = styled.div`
 border-radius: 4px;
 background-color: #d1d1d1;
 height: 150px;
-width: 330px;
+width: 340px;
 color: #29303b;
 margin-bottom: 10px;
 margin-top: 10px;
@@ -58,21 +58,24 @@ const Books = ( {books, onClickDelete} ) =>{
  
     return(
 
-        <ItemLink href={books.url}>
+        <ItemLink >
             <ItemContainer>
          
             
                 <Thumbnail src={books.image}></Thumbnail>
-                <TitlePane >{books.title.substring (0,26)}...
+                <TitlePane >{books.title.substring (0,18)}...
                 <button type="button" className={Book.bookDelete} 
             onClick={onClickDelete}><Trash size={20} 
             color="#c90d0d" weight="duotone" /></button></TitlePane>
-                <PricePane>R$ {books.price}</PricePane>
-                <Button variant="primary">Comprar</Button>
+            <PricePane>R$ {books.price}</PricePane>
+                
+            <div className={Book.bookedit}>
+                <Button variant="primary" className={Book.bookcompra} 
+                href={books.url}>Comprar</Button>
                 <UIButton 
                 component={Link}  
-                to={`/edit/${books.id}`}>Editar</UIButton>
-                
+                to={`/edit/${books.id}`} className={Book.bookbuttomedit}>Editar</UIButton>
+                </div>
     
 
             </ItemContainer>

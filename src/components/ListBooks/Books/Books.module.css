@@ -4,7 +4,26 @@
     background-color:unset;
     /* position:relative; */
     top: 10px;
-    left: auto;
+    left: 19em;
     position: absolute;
+}
+
+.bookedit{
+
+    margin-top: 2em;
+    margin-left: 7em;
+
+
+}
+
+.bookcompra{
+    /* width: 110px; */
+    display: inline-flex;
+
+}
+
+.bookbuttomedit{
+    
+    margin-top: 100em;
 
 }
